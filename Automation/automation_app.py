@@ -88,7 +88,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader("❌ Raw / Messy Data")
     st.dataframe(df_raw.head(10))
-    st.error(f"Rows: {len(df_raw)} | Columns with Errors: Dates, Case sensitivity, Duplicates")
+    st.warning(f"⚠️ Raw Data Detected: {len(df_raw)} rows | Issues: Dates, Duplicates")
 
 # Button to trigger automation
 if st.button("🚀 Run Automation Pipeline", type="primary"):
@@ -139,4 +139,5 @@ if st.button("🚀 Run Automation Pipeline", type="primary"):
         data=csv,
         file_name='clean_data_export.csv',
         mime='text/csv',
+
     )
